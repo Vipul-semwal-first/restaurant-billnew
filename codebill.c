@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int choice1,choice2, choice3, cost1,cost2,cost3, bill ;
+    int choice1,choice2, choice3, cost1,cost2,cost3, bill, n1, n2, n3;
     printf("\n********MENU********\n");
     printf("1. Pizza - $10\n");
     printf("2. Burger - $5\n");
@@ -9,10 +9,16 @@ int main(){
     printf("************************\n");
     printf("Enter your first choice: \n");
     scanf("%d", &choice1);
-     printf("Enter your second choice: \n");
+    printf("Enter the quantity for your first choice: \n");
+    scanf("%d", &n1);
+    printf("Enter your second choice: \n");
     scanf("%d", &choice2);
-     printf("Enter your third choice: \n");
+    printf("Enter the quantity for your second choice: \n");
+    scanf("%d", &n2);
+    printf("Enter your third choice: \n");
     scanf("%d", &choice3);
+    printf("Enter the quantity for your third choice: \n");
+    scanf("%d", &n3);
     if(choice1<1 || choice1>4 || choice2<1 || choice2>4 || choice3<1 || choice3>4){
         printf("Invalid choice!\n");
         return 1;
@@ -82,7 +88,7 @@ int main(){
         printf("You did not order anything for your third choice.\n");
         cost3 = 0;
     }
-    bill = cost1 + cost2 + cost3;
+    bill = (cost1 * n1) + (cost2 * n2) + (cost3 * n3);
     printf("Your total bill is: $%d\n", bill);
     return 0;
 }
